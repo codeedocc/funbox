@@ -4,6 +4,7 @@ import Cat from '../assets/cat.png'
 const FoieGras = () => {
   const [foieGras, setFoieGras] = useState(10)
   const [foieGrasBought, setFoieGrasBought] = useState(0)
+  const [foieGrasPicked, setFoieGrasPicked] = useState(false)
 
   const plusHandler = () => {
     setFoieGras((prev) => prev - 1)
@@ -17,8 +18,11 @@ const FoieGras = () => {
 
   return (
     <div className="info">
-      <div className="block-left">
-        <div className="inner">
+      <div className={foieGrasPicked ? 'block-left picked' : 'block-left'}>
+        <div
+          className="inner"
+          onClick={() => setFoieGrasPicked((prev) => !prev)}
+        >
           <div className="text">
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
@@ -26,7 +30,7 @@ const FoieGras = () => {
             <p className="quantity">{foieGras} порций</p>
             <p className="gift">мышь в подарок</p>
             <img src={Cat} alt="cute animal" className="picture" />
-            <div className="weight">
+            <div className={foieGrasPicked ? 'weight picked' : 'weight'}>
               <p className="number">0,5</p>
               <p className="kg">кг</p>
             </div>
@@ -35,19 +39,29 @@ const FoieGras = () => {
       </div>
 
       <div className="details">
-        <p>Чего сидишь? Порадуй котэ,</p>
-        <button>купи</button>
+        {foieGrasPicked ? (
+          <p>Печень утки разварная с артишоками</p>
+        ) : (
+          <>
+            <p>Чего сидишь? Порадуй котэ,</p>
+            <button onClick={() => setFoieGrasPicked((prev) => !prev)}>
+              купи
+            </button>
+          </>
+        )}
       </div>
 
-      <div className="buy-sell">
-        <button onClick={plusHandler} disabled={foieGras === 0}>
-          +
-        </button>
-        {foieGrasBought}
-        <button onClick={minusHandler} disabled={foieGrasBought === 0}>
-          -
-        </button>
-      </div>
+      {foieGrasPicked && (
+        <div className="buy-sell">
+          <button onClick={plusHandler} disabled={foieGras === 0}>
+            +
+          </button>
+          {foieGrasBought}
+          <button onClick={minusHandler} disabled={foieGrasBought === 0}>
+            -
+          </button>
+        </div>
+      )}
     </div>
   )
 }
