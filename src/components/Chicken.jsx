@@ -18,12 +18,20 @@ const Chicken = () => {
 
   return (
     <div className="info">
-      <div className={chickenPicked ? 'block-right picked' : 'block-right'}>
+      <div
+        className={
+          chicken === 0
+            ? 'block-right empty'
+            : chickenPicked
+            ? 'block-right picked'
+            : 'block-right'
+        }
+      >
         <div
-          className="inner"
+          className={chicken === 0 ? 'inner empty' : 'inner'}
           onClick={() => setChickenPicked((prev) => !prev)}
         >
-          <div className="text">
+          <div className={chicken === 0 ? 'text empty' : 'text'}>
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с курой</p>
@@ -31,7 +39,15 @@ const Chicken = () => {
             <p className="gift">5 мышей в подарок</p>
             <p className="result">заказчик доволен</p>
             <img src={Cat} alt="cute animal" className="picture" />
-            <div className={chickenPicked ? 'weight picked' : 'weight'}>
+            <div
+              className={
+                chicken === 0
+                  ? 'weight empty'
+                  : chickenPicked
+                  ? 'weight picked'
+                  : 'weight'
+              }
+            >
               <p className="number">5</p>
               <p className="kg">кг</p>
             </div>
@@ -40,7 +56,9 @@ const Chicken = () => {
       </div>
 
       <div className="details">
-        {chickenPicked ? (
+        {chicken === 0 ? (
+          <p className="message-empty">Печалька, с курой закончился</p>
+        ) : chickenPicked ? (
           <p>Филе из цыплят с трюфелями в бульоне</p>
         ) : (
           <>

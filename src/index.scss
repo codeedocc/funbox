@@ -79,6 +79,10 @@ body {
       .product {
         font-size: 12px;
       }
+
+      .message-empty {
+        color: #c1c183;
+      }
     }
 
     .block-left {
@@ -185,11 +189,23 @@ body {
           .weight.picked {
             background-color: #da1668;
           }
+          .weight.empty {
+            background-color: #b3b3b3;
+          }
         }
+        .text.empty {
+          color: #b3b3b3;
+        }
+      }
+      .inner.empty {
+        background-color: #f2f2f2;
       }
     }
     .block-left.picked {
       background-color: #da1668;
+    }
+    .block-left.empty {
+      background-color: #b3b3b3;
     }
 
     .block-center {
@@ -296,11 +312,25 @@ body {
           .weight.picked {
             background-color: #da1668;
           }
+          .weight.empty {
+            background-color: #b3b3b3;
+          }
         }
+
+        .text.empty {
+          color: #b3b3b3;
+        }
+      }
+
+      .inner.empty {
+        background-color: #f2f2f2;
       }
     }
     .block-center.picked {
       background-color: #da1668;
+    }
+    .block-center.empty {
+      background-color: #b3b3b3;
     }
 
     .block-right {
@@ -401,12 +431,26 @@ body {
           .weight.picked {
             background-color: #da1668;
           }
+          .weight.empty {
+            background-color: #b3b3b3;
+          }
         }
+
+        .text.empty {
+          color: #b3b3b3;
+        }
+      }
+
+      .inner.empty {
+        background-color: #f2f2f2;
       }
     }
 
     .block-right.picked {
       background-color: #da1668;
+    }
+    .block-right.empty {
+      background-color: #b3b3b3;
     }
   }
 }

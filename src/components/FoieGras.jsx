@@ -18,19 +18,35 @@ const FoieGras = () => {
 
   return (
     <div className="info">
-      <div className={foieGrasPicked ? 'block-left picked' : 'block-left'}>
+      <div
+        className={
+          foieGras === 0
+            ? 'block-left empty'
+            : foieGrasPicked
+            ? 'block-left picked'
+            : 'block-left'
+        }
+      >
         <div
-          className="inner"
+          className={foieGras === 0 ? 'inner empty' : 'inner'}
           onClick={() => setFoieGrasPicked((prev) => !prev)}
         >
-          <div className="text">
+          <div className={foieGras === 0 ? 'text empty' : 'text'}>
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с фуа-гра</p>
             <p className="quantity">{foieGras} порций</p>
             <p className="gift">мышь в подарок</p>
             <img src={Cat} alt="cute animal" className="picture" />
-            <div className={foieGrasPicked ? 'weight picked' : 'weight'}>
+            <div
+              className={
+                foieGras === 0
+                  ? 'weight empty'
+                  : foieGrasPicked
+                  ? 'weight picked'
+                  : 'weight'
+              }
+            >
               <p className="number">0,5</p>
               <p className="kg">кг</p>
             </div>
@@ -39,7 +55,9 @@ const FoieGras = () => {
       </div>
 
       <div className="details">
-        {foieGrasPicked ? (
+        {foieGras === 0 ? (
+          <p className="message-empty">Печалька, с фуа-гра закончился</p>
+        ) : foieGrasPicked ? (
           <p>Печень утки разварная с артишоками</p>
         ) : (
           <>

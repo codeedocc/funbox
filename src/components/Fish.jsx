@@ -18,16 +18,35 @@ const Fish = () => {
 
   return (
     <div className="info">
-      <div className={fishPicked ? 'block-center picked' : 'block-center'}>
-        <div className="inner" onClick={() => setFishPicked((prev) => !prev)}>
-          <div className="text">
+      <div
+        className={
+          fish === 0
+            ? 'block-center empty'
+            : fishPicked
+            ? 'block-center picked'
+            : 'block-center'
+        }
+      >
+        <div
+          className={fish === 0 ? 'inner empty' : 'inner'}
+          onClick={() => setFishPicked((prev) => !prev)}
+        >
+          <div className={fish === 0 ? 'text empty' : 'text'}>
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с рыбой</p>
             <p className="quantity">{fish} порций</p>
             <p className="gift">2 мыши в подарок</p>
             <img src={Cat} alt="cute animal" className="picture" />
-            <div className={fishPicked ? 'weight picked' : 'weight'}>
+            <div
+              className={
+                fish === 0
+                  ? 'weight empty'
+                  : fishPicked
+                  ? 'weight picked'
+                  : 'weight'
+              }
+            >
               <p className="number">2</p>
               <p className="kg">кг</p>
             </div>
@@ -36,7 +55,9 @@ const Fish = () => {
       </div>
 
       <div className="details">
-        {fishPicked ? (
+        {fish === 0 ? (
+          <p className="message-empty">Печалька, с рыбой закончился</p>
+        ) : fishPicked ? (
           <p className="product">
             Головы щучьи с чеcноком да свежайшая семгушка
           </p>
