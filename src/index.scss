@@ -24,21 +24,57 @@ body {
 }
 
 .title {
-  // p {
-  //   color: #fff;
-  //   text-align: center;
-  //   font-size: 42px;
-  //   margin: auto;
-  //   padding-top: 8rem;
-  // }
+  color: #fff;
+  text-align: center;
+  font-size: 42px;
+  margin: auto;
+  padding-top: 3rem;
+}
 
-  .container {
-    width: 1400px;
-    height: 600px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-top: 4rem;
+.container {
+  width: 1400px;
+  height: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 3rem;
+
+  .info {
+    width: 300px;
+
+    .buy-sell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 40px;
+
+      button {
+        border: none;
+        background: none;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+      color: #fff;
+      font-size: 14px;
+
+      button {
+        border: none;
+        background: none;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
 
     .block-left {
       grid-column: 1;
@@ -68,17 +104,17 @@ body {
         position: relative;
 
         .text {
-          padding-left: 30px;
+          padding-left: 10px;
 
           .title {
             font-size: 15px;
             color: #666;
-            padding-top: 10px;
+            padding-top: 20px;
             font-weight: 600;
           }
 
           .name {
-            padding-top: 20px;
+            padding-top: 10px;
             font-size: 50px;
             font-weight: bold;
           }
@@ -171,17 +207,17 @@ body {
         position: relative;
 
         .text {
-          padding-left: 30px;
+          padding-left: 10px;
 
           .title {
             font-size: 15px;
             color: #666;
-            padding-top: 10px;
+            padding-top: 20px;
             font-weight: 600;
           }
 
           .name {
-            padding-top: 20px;
+            padding-top: 10px;
             font-size: 50px;
             font-weight: bold;
           }
@@ -268,17 +304,17 @@ body {
         position: relative;
 
         .text {
-          padding-left: 30px;
+          padding-left: 10px;
 
           .title {
             font-size: 15px;
             color: #666;
-            padding-top: 10px;
+            padding-top: 20px;
             font-weight: 600;
           }
 
           .name {
-            padding-top: 20px;
+            padding-top: 10px;
             font-size: 50px;
             font-weight: bold;
           }

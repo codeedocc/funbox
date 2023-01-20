@@ -1,23 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Cat from '../assets/cat.png'
 
 const Chicken = () => {
+  const [chicken, setChicken] = useState(10)
+  const [chickenBought, setChickenBought] = useState(0)
+
+  const plusHandler = () => {
+    setChicken((prev) => prev - 1)
+    setChickenBought((prev) => prev + 1)
+  }
+
+  const minusHandler = () => {
+    setChicken((prev) => prev + 1)
+    setChickenBought((prev) => prev - 1)
+  }
+
   return (
-    <div className="block-right">
-      <div className="inner">
-        <div className="text">
-          <p className="title">Сказочное заморское яство</p>
-          <p className="name">Нямушка</p>
-          <p className="description">с курой</p>
-          <p className="quantity">100 порций</p>
-          <p className="gift">5 мышей в подарок</p>
-          <p className="result">заказчик доволен</p>
-          <img src={Cat} alt="cute animal" className="picture" />
-          <div className="weight">
-            <p className="number">5</p>
-            <p className="kg">кг</p>
+    <div className="info">
+      <div className="block-right">
+        <div className="inner">
+          <div className="text">
+            <p className="title">Сказочное заморское яство</p>
+            <p className="name">Нямушка</p>
+            <p className="description">с курой</p>
+            <p className="quantity">{chicken} порций</p>
+            <p className="gift">5 мышей в подарок</p>
+            <p className="result">заказчик доволен</p>
+            <img src={Cat} alt="cute animal" className="picture" />
+            <div className="weight">
+              <p className="number">5</p>
+              <p className="kg">кг</p>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="details">
+        <p>Чего сидишь? Порадуй котэ,</p>
+        <button>купи</button>
+      </div>
+
+      <div className="buy-sell">
+        <button onClick={plusHandler} disabled={chicken === 0}>
+          +
+        </button>
+        {chickenBought}
+        <button onClick={minusHandler} disabled={chickenBought === 0}>
+          -
+        </button>
       </div>
     </div>
   )

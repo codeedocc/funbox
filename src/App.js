@@ -1,11 +1,12 @@
+import React from 'react'
 import Chicken from './components/Chicken'
 import Fish from './components/Fish'
 import FoieGras from './components/FoieGras'
 
 function App() {
   return (
-    <div className="title">
-      <p>Ты сегодня покормил кота?</p>
+    <div>
+      <p className="title">Ты сегодня покормил кота?</p>
       <div className="container">
         <FoieGras />
         <Fish />
