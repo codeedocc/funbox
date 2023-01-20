@@ -1,4 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   margin: 0;
+}
+
+body {
+  background-image: url('./assets/back.png');
+  background-repeat: repeat-x repeat-y;
+  width: 100%;
+}
+
+.title {
+  p {
+    color: #fff;
+    text-align: center;
+    font-size: 42px;
+    margin: auto;
+    padding-top: 8rem;
+  }
+
+  .container {
+    width: 1400px;
+    height: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 4rem;
+
+    .block-left {
+      grid-column: 1;
+      width: 300px;
+      height: 400px;
+      background-color: #1898d9;
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-right: 10px;
+
+      .inner {
+        width: 294px;
+        height: 394px;
+        background-color: #fff;
+        clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+        border-radius: 10px;
+      }
+    }
+
+    .block-center {
+      grid-column: 2;
+      width: 300px;
+      height: 400px;
+      background-color: #1898d9;
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-right: 10px;
+
+      .inner {
+        width: 294px;
+        height: 394px;
+        background-color: #fff;
+        clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+        border-radius: 10px;
+      }
+    }
+
+    .block-right {
+      grid-column: 3;
+      width: 300px;
+      height: 400px;
+      background-color: #1898d9;
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-right: 10px;
+
+      .inner {
+        width: 294px;
+        height: 394px;
+        background-color: #fff;
+        clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0 100%, 0 20%);
+        border-radius: 10px;
+      }
+    }
+  }
 }
