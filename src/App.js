@@ -6,7 +6,7 @@ import FoieGras from './components/FoieGras'
 function App() {
   return (
     <div>
-      <p className="title">Ты сегодня покормил кота?</p>
+      <p className="title-head">Ты сегодня покормил кота?</p>
       <div className="container">
         <FoieGras />
         <Fish />
