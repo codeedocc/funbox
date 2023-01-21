@@ -35,9 +35,17 @@ const Fish = () => {
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с рыбой</p>
-            <p className="quantity">{fish} порций</p>
-            <p className="gift">2 мыши в подарок</p>
-            <img src={Cat} alt="cute animal" className="picture" />
+            <p className="quantity">
+              <strong className="number">{fish}</strong> порций
+            </p>
+            <p className="gift">
+              <strong className="number">2</strong> мыши в подарок
+            </p>
+            <img
+              src={Cat}
+              alt="cute animal"
+              className={fish === 0 ? 'picture empty' : 'picture'}
+            />
             <div
               className={
                 fish === 0
@@ -63,8 +71,13 @@ const Fish = () => {
           </p>
         ) : (
           <>
-            <p>Чего сидишь? Порадуй котэ,</p>
-            <button onClick={() => setFishPicked((prev) => !prev)}>купи</button>
+            <p className="message-description">Чего сидишь? Порадуй котэ,</p>
+            <button
+              onClick={() => setFishPicked((prev) => !prev)}
+              className="buy-btn"
+            >
+              купи
+            </button>
           </>
         )}
       </div>

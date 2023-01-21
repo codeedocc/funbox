@@ -35,10 +35,18 @@ const Chicken = () => {
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с курой</p>
-            <p className="quantity">{chicken} порций</p>
-            <p className="gift">5 мышей в подарок</p>
+            <p className="quantity">
+              <strong className="number">{chicken}</strong> порций
+            </p>
+            <p className="gift">
+              <strong className="number">5</strong> мышей в подарок
+            </p>
             <p className="result">заказчик доволен</p>
-            <img src={Cat} alt="cute animal" className="picture" />
+            <img
+              src={Cat}
+              alt="cute animal"
+              className={chicken === 0 ? 'picture empty' : 'picture'}
+            />
             <div
               className={
                 chicken === 0
@@ -59,11 +67,14 @@ const Chicken = () => {
         {chicken === 0 ? (
           <p className="message-empty">Печалька, с курой закончился</p>
         ) : chickenPicked ? (
-          <p>Филе из цыплят с трюфелями в бульоне</p>
+          <p className="product">Филе из цыплят с трюфелями в бульоне</p>
         ) : (
           <>
-            <p>Чего сидишь? Порадуй котэ,</p>
-            <button onClick={() => setChickenPicked((prev) => !prev)}>
+            <p className="message-description">Чего сидишь? Порадуй котэ,</p>
+            <button
+              onClick={() => setChickenPicked((prev) => !prev)}
+              className="buy-btn"
+            >
               купи
             </button>
           </>

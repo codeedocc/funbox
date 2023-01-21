@@ -35,9 +35,15 @@ const FoieGras = () => {
             <p className="title">Сказочное заморское яство</p>
             <p className="name">Нямушка</p>
             <p className="description">с фуа-гра</p>
-            <p className="quantity">{foieGras} порций</p>
+            <p className="quantity">
+              <strong className="number">{foieGras}</strong> порций
+            </p>
             <p className="gift">мышь в подарок</p>
-            <img src={Cat} alt="cute animal" className="picture" />
+            <img
+              src={Cat}
+              alt="cute animal"
+              className={foieGras === 0 ? 'picture empty' : 'picture'}
+            />
             <div
               className={
                 foieGras === 0
@@ -58,11 +64,14 @@ const FoieGras = () => {
         {foieGras === 0 ? (
           <p className="message-empty">Печалька, с фуа-гра закончился</p>
         ) : foieGrasPicked ? (
-          <p>Печень утки разварная с артишоками</p>
+          <p className="product">Печень утки разварная с артишоками</p>
         ) : (
           <>
-            <p>Чего сидишь? Порадуй котэ,</p>
-            <button onClick={() => setFoieGrasPicked((prev) => !prev)}>
+            <p className="message-description">Чего сидишь? Порадуй котэ,</p>
+            <button
+              onClick={() => setFoieGrasPicked((prev) => !prev)}
+              className="buy-btn"
+            >
               купи
             </button>
           </>

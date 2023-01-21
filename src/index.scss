@@ -29,6 +29,11 @@ body {
   font-size: 42px;
   margin: auto;
   padding-top: 8rem;
+
+  @include mobile {
+    padding-top: 4rem;
+    font-size: 25px;
+  }
 }
 
 .container {
@@ -39,6 +44,13 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   padding-top: 4rem;
 
+  @include mobile {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
   .info {
     width: 300px;
 
@@ -48,6 +60,10 @@ body {
       justify-content: center;
       color: #fff;
       font-size: 40px;
+
+      @include mobile {
+        margin-left: 35px;
+      }
 
       button {
         border: none;
@@ -78,10 +94,29 @@ body {
 
       .product {
         font-size: 12px;
+        font-weight: bold;
+
+        @include mobile {
+          margin-left: 35px;
+          font-size: 10px;
+        }
+      }
+
+      .message-description {
+        font-weight: bold;
+
+        @include mobile {
+          margin-left: 35px;
+        }
       }
 
       .message-empty {
         color: #c1c183;
+        font-weight: bold;
+      }
+
+      .buy-btn {
+        font-weight: bold;
       }
     }
 
@@ -96,6 +131,10 @@ body {
       justify-content: center;
       border-radius: 10px;
       margin-right: 10px;
+
+      @include mobile {
+        margin-left: 35px;
+      }
 
       .inner {
         width: 294px;
@@ -115,6 +154,20 @@ body {
 
         .text {
           padding-left: 10px;
+
+          .gift {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
+
+          .quantity {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
 
           .title {
             font-size: 15px;
@@ -158,6 +211,10 @@ body {
             left: -30px;
           }
 
+          .picture.empty {
+            opacity: 0.5;
+          }
+
           .weight {
             position: absolute;
             bottom: 20px;
@@ -195,6 +252,7 @@ body {
         }
         .text.empty {
           color: #b3b3b3;
+          opacity: 0.8;
         }
       }
       .inner.empty {
@@ -220,6 +278,11 @@ body {
       border-radius: 10px;
       margin-right: 10px;
 
+      @include mobile {
+        margin-left: 35px;
+        margin-top: 100px;
+      }
+
       .inner {
         width: 294px;
         height: 494px;
@@ -238,6 +301,20 @@ body {
 
         .text {
           padding-left: 10px;
+
+          .gift {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
+
+          .quantity {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
 
           .title {
             font-size: 15px;
@@ -281,6 +358,10 @@ body {
             left: -30px;
           }
 
+          .picture.empty {
+            opacity: 0.5;
+          }
+
           .weight {
             position: absolute;
             bottom: 20px;
@@ -319,6 +400,7 @@ body {
 
         .text.empty {
           color: #b3b3b3;
+          opacity: 0.8;
         }
       }
 
@@ -344,6 +426,11 @@ body {
       justify-content: center;
       border-radius: 10px;
 
+      @include mobile {
+        margin-left: 35px;
+        margin-top: 100px;
+      }
+
       .inner {
         width: 294px;
         height: 494px;
@@ -357,6 +444,20 @@ body {
 
         .text {
           padding-left: 10px;
+
+          .gift {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
+
+          .quantity {
+            .number {
+              color: black;
+              font-size: 16px;
+            }
+          }
 
           .title {
             font-size: 15px;
@@ -400,6 +501,10 @@ body {
             left: -30px;
           }
 
+          .picture.empty {
+            opacity: 0.5;
+          }
+
           .weight {
             position: absolute;
             bottom: 20px;
@@ -438,6 +543,7 @@ body {
 
         .text.empty {
           color: #b3b3b3;
+          opacity: 0.8;
         }
       }
 
