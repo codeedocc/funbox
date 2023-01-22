@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import Cat from '../assets/cat.png'
+import { useOverOut } from '../hooks/overOut'
 
 const Fish = () => {
   const [fish, setFish] = useState(10)
   const [fishBought, setFishBought] = useState(0)
   const [fishPicked, setFishPicked] = useState(false)
+  const overOut = useOverOut()
 
   const plusHandler = () => {
     setFish((prev) => prev - 1)
@@ -30,6 +32,9 @@ const Fish = () => {
         <div
           className={fish === 0 ? 'inner empty' : 'inner'}
           onClick={() => setFishPicked((prev) => !prev)}
+          style={{ backgroundColor: overOut.bgColor }}
+          onMouseOver={() => overOut.mouseOverHandler()}
+          onMouseOut={() => overOut.mouseOutHandler()}
         >
           <div className={fish === 0 ? 'text empty' : 'text'}>
             <p className="title">Сказочное заморское яство</p>
